@@ -52,8 +52,8 @@ pscp -i keyfile.ppk admin@ipdu:/bulk_config.txt bulk_config.txt
 pscp -i keyfile.ppk admin@ipdu:/raw_config.txt raw_config.txt
 ```
 
-Note that "keyfile.ppk" is a Putty compatible private/public key with
-a suitable private key for the admin user.
+will do the same thing.  Note that "keyfile.ppk" is a Putty compatible
+private/public key with a suitable private key for the admin user.
 
 Try these commands on one or more of your PDUs first to check everything
 will work.  If the commands do not work on their own then get that fixed
@@ -75,7 +75,7 @@ Next copy the `pdubackups.sh` shell script to a directrory in your PATH renaming
 
 ```
 cp pdubackups.sh $HOME/bin/pdubackups
-cd $OME/bin
+cd $HOME/bin
 chmod u+x pdubackups
 ```
 
@@ -139,7 +139,7 @@ in the `pdubackups` script.
 
 Once you have two or more raw_config.txt backups from a single PDU you can use the
 `diffrawconfig.py` Python 3 program to compare them and report on any differences.
-Differences and classed as additions, changes and deletions.
+Differences are classed as additions, changes and deletions.
 
 For example if you have two raw_config.txt files called:
 
@@ -148,7 +148,7 @@ px2study.5.raw_config.txt
 px2study.6.raw_config.txt
 ```
 
-Then then can be compared with:
+then then can be compared with:
 
 ```
 python diffrawconfig.py px2study.5.raw_config.txt px2study.6.raw_config.txt
