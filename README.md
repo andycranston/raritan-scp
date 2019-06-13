@@ -175,6 +175,17 @@ Key "roles[8].name" deleted
   Old value = "FW Update"
 ```
 
+## compareconfigs.py Python 3 CGI program
+
+The `compareconfigs.py` CGI program and the matching CSS (Cascading
+Style Sheet) `compareconfigs.css` can  be installed on a web server with
+CGI support.  The script can then be run from a browser to compare two
+raw configurations.
+
+You can run this on the web at:
+
+(http://cranstonhub.com/cgi-bin/compareconfigs.py)
+
 ------------------------------------------------------------
 
 End of README.md
