@@ -1,9 +1,10 @@
 # raritan-scp
 
-A handful of utilities which make use of the scp features of Raritan intelligent PDUs
+A handful of utilities which make use of the scp features of Raritan
+intelligent PDUs.
 
-The utilities here may be of use to you if you are responsbile for
-the administration of one or more Raritan intelligent PDUs.
+The utilities here may be of use to you if you are responsbile for the
+administration of one or more Raritan intelligent PDUs.
 
 ## What you need
 
@@ -28,10 +29,12 @@ This link:
 
 [PX2-1000/2000 Series Online Help](https://help.raritan.com/px2-2000/v3.5.0/en/)
 
-is a great online resource for what you can do with Raritan intellgent PDUs.
-To find out more about using the scp commands go to the "Using SCP commands" section.
+is a great online resource for what you can do with Raritan intellgent
+PDUs.  To find out more about using the scp commands go to the "Using
+SCP commands" section.
 
-A quick summary follows where "ipdu" is the hostname of a Raritan intelligent PDU.
+A quick summary follows where "ipdu" is the hostname of a Raritan
+intelligent PDU.
 
 On UNIX/Linux:
 
@@ -47,13 +50,12 @@ current directory.
 On Windows:
 
 ```
-pscp -i keyfile.ppk admin@ipdu:/backup_settings.txt backup_settings.txt
-pscp -i keyfile.ppk admin@ipdu:/bulk_config.txt bulk_config.txt
-pscp -i keyfile.ppk admin@ipdu:/raw_config.txt raw_config.txt
+pscp admin@ipdu:/backup_settings.txt backup_settings.txt
+pscp admin@ipdu:/bulk_config.txt bulk_config.txt
+pscp admin@ipdu:/raw_config.txt raw_config.txt
 ```
 
-will do the same thing.  Note that "keyfile.ppk" is a Putty compatible
-private/public key with a suitable private key for the admin user.
+will do the same thing.
 
 Try these commands on one or more of your PDUs first to check everything
 will work.  If the commands do not work on their own then get that fixed
@@ -63,15 +65,15 @@ before going any further.
 
 This is for UNIX/Linux only.
 
-First create a directory called `pdubackups` in your home directory.  I did the
-following:
+First create a directory called `pdubackups` in your home directory.
+I did the following:
 
 ```
 mkdir $HOME/pdubackups
 ```
 
-Next copy the `pdubackups.sh` shell script to a directrory in your PATH renaming it to
-`pdubackups` and making it executable.  Something like:
+Next copy the `pdubackups.sh` shell script to a directrory in your PATH
+renaming it to `pdubackups` and making it executable.  Something like:
 
 ```
 cp pdubackups.sh $HOME/bin/pdubackups
@@ -97,7 +99,8 @@ Also edit the line which reads:
 user=andyc
 ```
 
-and change the user to the user name you know you can login with using scp without a password.
+and change the user to the user name you know you can login with using
+scp without a password.
 
 Now run the pdubackups script:
 
@@ -130,16 +133,18 @@ I recommend creating a crontab entry similar to:
 30 23 * * * bin/pdubackups
 ```
 
-To run the `pdubackups` script once every day - in the above example at 11:30pm.
+to run the `pdubackups` script once every day - in the above example
+at 11:30pm.
 
-Over a week you will have seven backups for each PDU in the `pdulist=` line
-in the `pdubackups` script.
+Over a week you will have seven backups for each PDU in the `pdulist=`
+line in the `pdubackups` script.
 
 ## diffrawconfig.py Python 3 program
 
-Once you have two or more raw_config.txt backups from a single PDU you can use the
-`diffrawconfig.py` Python 3 program to compare them and report on any differences.
-Differences are classed as additions, changes and deletions.
+Once you have two or more raw_config.txt backups from a single PDU
+you can use the `diffrawconfig.py` Python 3 program to compare them
+and report on any differences.  Differences are classed as additions,
+changes and deletions.
 
 For example if you have two raw_config.txt files called:
 
