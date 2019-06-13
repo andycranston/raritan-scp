@@ -1,0 +1,81 @@
+/*
+ *  @(!--#) @(#) compareconfigs.css, version 003, 12-june-2019
+ *
+ *  style sheet for the compareconfigs.py dynamic web page
+ *
+ */
+
+body {
+  background-color: lightgray;
+  font-size: 100%;
+}
+
+h1 {
+  /* background-color: red; */
+  color: black;
+  border-style: dotted;
+  border-color: black;
+  border-width: 4px;
+  border-radius: 12px;
+  padding: 20px;
+  font-family: arial, verdana, sans-serif;
+}
+
+.prompttext {
+  font-family: arial, verdana, sans-serif;
+  font-size: 1.2em;
+}
+
+input[type=file] {
+  width: 80%;
+  background-color: lightgray;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+}
+
+input[type=submit] {
+  background-color: lightgray;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 1.2em;
+}
+  
+
+.key {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.added {
+  font-family: "Lucida Console", "Courier New", monospace;
+  color: blue;
+  margin-left: 5%;
+}
+
+.changed {
+  font-family: "Lucida Console", "Courier New", monospace;
+  color: green;
+  margin-left: 5%;
+}
+
+.deleted {
+  font-family: "Lucida Console", "Courier New", monospace;
+  color: red;
+  margin-left: 5%;
+}
+
+.endcomparison {
+  font-family: arial, verdana, sans-serif;
+  font-size: 0.8em;
+}
+
+.nodifference {
+  color: limegreen;
+  font-family: arial, verdana, sans-serif;
+  font-size: 3em;
+}
+
+/* end of file */
